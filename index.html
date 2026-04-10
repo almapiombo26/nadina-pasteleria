@@ -42,71 +42,76 @@
     <h2>Nuestras especialidades</h2>
     <div class="ornamento">✦</div>
   </div>
-
+  
   <div class="productos">
     <div class="card">
-        <div class="card-img-wrap carrusel-hover">
-            <div class="carrusel-track">
-                <img src="img/torta-matilda.jpeg" alt="Torta Matilda" class="img-carrusel">
-            </div>
+      <div class="card-img-wrap carrusel-hover">
+        <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
+        <div class="carrusel-track">
+          <img src="img/torta-matilda.jpeg" alt="Torta Matilda" class="img-carrusel">
         </div>
-        <div class="card-body">
-            <h3>Torta Matilda</h3>
-            <p class="descripcion">Húmeda, intensa y cubierta de ganache artesanal.</p>
-            <div class="selector-tamanio">
-                <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                    <option value="16" data-precio="8500">16cm (6-8 porciones)</option>
-                    <option value="20" data-precio="12000">20cm (12-14 porciones)</option>
-                </select>
-            </div>
-            <span class="precio-display">$8.500</span>
-            <button onclick="prepararCompra(this, 'Torta Matilda', 'img/torta-matilda.jpeg')">Agregar al carrito</button>
+        <button class="next" onclick="moverCarrusel(this, 1)">&#10095;</button>
+      </div>
+      <div class="card-body">
+        <h3>Torta Matilda</h3>
+        <p class="descripcion">Húmeda, intensa y cubierta de ganache artesanal.</p>
+        <div class="selector-tamanio">
+          <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
+            <option value="16" data-precio="8500">16cm (6-8 porciones)</option>
+            <option value="20" data-precio="12000">20cm (12-14 porciones)</option>
+          </select>
         </div>
+        <span class="precio-display">$8.500</span>
+        <button onclick="prepararCompra(this, 'Torta Matilda', 'img/torta-matilda.jpeg')">Agregar al carrito</button>
+      </div>
     </div>
 
     <div class="card">
-        <div class="card-img-wrap carrusel-hover">
-            <div class="carrusel-track">
-                <img src="img/brownie1.jpeg" alt="Brownie" class="img-carrusel">
-                <img src="img/brownie2.jpeg" alt="Brownie Interior" class="img-carrusel">
-            </div>
+      <div class="card-img-wrap carrusel-hover">
+        <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
+        <div class="carrusel-track">
+          <img src="img/brownie1.jpeg" alt="Brownie" class="img-carrusel">
+          <img src="img/brownie2.jpeg" alt="Brownie Interior" class="img-carrusel">
         </div>
-        <div class="card-body">
-            <h3>Brownie & Frutos Rojos</h3>
-            <p class="descripcion">Base de brownie, dulce de leche, crema y frutos frescos.</p>
-            <div class="selector-tamanio">
-                <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                    <option value="16" data-precio="8200">16cm (6-8 porciones)</option>
-                    <option value="20" data-precio="11500">20cm (12-14 porciones)</option>
-                </select>
-            </div>
-            <span class="precio-display">$8.200</span>
-            <button onclick="prepararCompra(this, 'Brownie con Frutos Rojos', 'img/brownie1.jpeg')">Agregar al carrito</button>
+        <button class="next" onclick="moverCarrusel(this, 1)">&#10095;</button>
+      </div>
+      <div class="card-body">
+        <h3>Brownie & Frutos Rojos</h3>
+        <p class="descripcion">Base de brownie, dulce de leche, crema y frutos frescos.</p>
+        <div class="selector-tamanio">
+          <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
+            <option value="16" data-precio="8200">16cm (6-8 porciones)</option>
+            <option value="20" data-precio="11500">20cm (12-14 porciones)</option>
+          </select>
         </div>
+        <span class="precio-display">$8.200</span>
+        <button onclick="prepararCompra(this, 'Brownie con Frutos Rojos', 'img/brownie1.jpeg')">Agregar al carrito</button>
+      </div>
     </div>
-
-
-
+    
+    
     <div class="card">
-        <div class="card-img-wrap carrusel-hover">
-            <div class="carrusel-track">
-                <img src="img/redvelvet-1.jpeg" alt="Red Velvet" class="img-carrusel">
-                <img src="img/redvelvet-2.jpeg" alt="Red Velvet Interior" class="img-carrusel">
-            </div>
+      <div class="card-img-wrap carrusel-hover">
+        <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
+        <div class="carrusel-track">
+          <img src="img/redvelvet-1.jpeg" alt="Red Velvet" class="img-carrusel">
+          <img src="img/redvelvet-2.jpeg" alt="Red Velvet Interior" class="img-carrusel">
         </div>
-        <div class="card-body">
-            <h3>Red Velvet</h3>
-            <p class="descripcion">Clásico bizcochuelo rojo aterciopelado con un suave toque de cacao y nuestra crema de queso crema (frosting).</p>
-            <div class="selector-tamanio">
-                <label>Elegir tamaño:</label>
-                <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                    <option value="16" data-precio="9000" data-porciones="6-8">16cm (6-8 porciones)</option>
-                    <option value="20" data-precio="13000" data-porciones="12-14">20cm (12-14 porciones)</option>
-                </select>
-            </div>
-            <span class="precio-display">$9.000</span>
-            <button onclick="prepararCompra(this, 'Red Velvet', 'img/redvelvet-1.jpeg')">Agregar al carrito</button>
+        <button class="next" onclick="moverCarrusel(this, 1)">&#10095;</button>
+      </div>
+      <div class="card-body">
+        <h3>Red Velvet</h3>
+        <p class="descripcion">Clásico bizcochuelo rojo aterciopelado con un suave toque de cacao y nuestra crema de queso crema (frosting).</p>
+        <div class="selector-tamanio">
+          <label>Elegir tamaño:</label>
+          <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
+            <option value="16" data-precio="9000" data-porciones="6-8">16cm (6-8 porciones)</option>
+            <option value="20" data-precio="13000" data-porciones="12-14">20cm (12-14 porciones)</option>
+          </select>
         </div>
+        <span class="precio-display">$9.000</span>
+        <button onclick="prepararCompra(this, 'Red Velvet', 'img/redvelvet-1.jpeg')">Agregar al carrito</button>
+      </div>
     </div>
 
   </div>
@@ -135,8 +140,11 @@
     <div class="footer-info" style="display: flex; gap: 50px; flex-wrap: wrap;">
       <div class="footer-item">
         <strong style="display:block; color:var(--beige); margin-bottom: 5px;">📍 Visitanos</strong>
-        <p style="font-size: 14px; opacity: 0.8;"><a href="https://share.google/E5ck3OtWsH95KWpLq" target="_blank">Costa Rica 4824, Palermo</a></p>
+        <p style="font-size: 14px; opacity: 0.8;">
+          <a href="https://www.google.com/maps/place/Costa+Rica+4828,+C1414DME+C1414DME,+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.5872474,-58.4285349,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb5861f5783d3:0xe6de9b47977ffc2a!8m2!3d-34.5872474!4d-58.4285349!16s%2Fg%2F11c22gclwr?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Costa Rica 4824, Palermo</a>
+        </p>
       </div>
+
       <div class="footer-item">
         <strong style="display:block; color:var(--beige); margin-bottom: 5px;">📱 Escribinos</strong>
         <p style="font-size: 14px; opacity: 0.8;">+54 9 11 3633-7422</p>

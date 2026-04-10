@@ -34,6 +34,15 @@ function actualizarBadge() {
   }
 }
 
+function moverCarrusel(boton, direccion) {
+    const track = boton.parentElement.querySelector('.carrusel-track');
+    if (direccion === 1) {
+        track.style.transform = 'translateX(-50%)';
+    } else {
+        track.style.transform = 'translateX(0%)';
+    }
+}
+
 // ---- Toast de confirmación ----
 function mostrarToast(mensaje) {
   let toast = document.getElementById('toast');
