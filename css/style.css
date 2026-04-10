@@ -873,49 +873,66 @@ footer {
   opacity: 0.5;
 }
 
-.card-img-wrap { 
+
+.card-img-wrap {
   position: relative;
   display: block;
-  overflow-x: auto; 
+  height: 250px; /* Altura única para que no salte */
+  overflow-x: auto; /* Permite el scroll con el dedo */
   overflow-y: hidden;
-  scroll-snap-type: x mandatory; 
-  -webkit-overflow-scrolling: touch; 
-  scrollbar-width: none;
-  /* AGREGAR ESTO: */
-  touch-action: pan-x; /* Avisa al celu que solo vamos a movernos horizontalmente */
+  scroll-snap-type: x mandatory; /* Hace que la imagen "calce" justo al deslizar */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Oculta scroll en Firefox */
+  touch-action: pan-x; /* Optimiza para celular */
   cursor: grab;
 }
 
+/* Ocultar scrollbar en Chrome/Safari */
+.card-img-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+/* 2. EL TRACK (Donde van las fotos) */
+.carrusel-track {
+  display: flex;
+  width: 200%; /* Porque tenés 2 fotos */
+  height: 100%;
+  transition: transform 0.5s ease-in-out; /* Para que las flechas se muevan suave */
+}
+
+/* 3. LAS IMÁGENES */
 .img-carrusel {
-  width: 50%; 
+  width: 50%; /* Ocupa la mitad del track (o sea, el 100% de la card) */
   flex-shrink: 0;
   scroll-snap-align: start;
   object-fit: cover;
-  /* AGREGAR ESTO: */
-  pointer-events: none; /* Evita que el celu crea que querés "arrastrar" la imagen como archivo */
+  object-position: center;
+  pointer-events: none; /* Para que el celu no intente "arrastrar" la foto */
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-    filter: invert(28%) sepia(12%) saturate(1257%) hue-rotate(131deg) brightness(95%) contrast(92%);
-    /* Esto hace que el ícono del calendario sea del mismo verde que tu marca */
-}
-
+/* 4. LAS FLECHAS (Ubicación y estilo) */
 .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(27, 83, 87, 0.6); /* El verde de tu marca con transparencia */
-    color: white;
-    border: none;
-    padding: 10px 5px;
-    cursor: pointer;
-    z-index: 10;
-    transition: background 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(27, 83, 87, 0.6);
+  color: white;
+  border: none;
+  padding: 12px 8px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
 }
 
+.prev { left: 0; border-radius: 0 5px 5px 0; }
+.next { right: 0; border-radius: 5px 0 0 5px; }
 .prev:hover, .next:hover { background: var(--verde); }
 
+/* 5. EL ICONO DEL CALENDARIO */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(28%) sepia(12%) saturate(1257%) hue-rotate(131deg) brightness(95%) contrast(92%);
+}
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -1019,5 +1036,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @media (hover: none) {
     .prev, .next {
         display: none; /* En celu no hacen falta flechas si podés deslizar */
+    }
+}
+
+@media (min-width: 1024px) {
+    /* En PC: evitamos que se vea la barra de scroll si el mouse hace algo raro */
+    .card-img-wrap {
+        overflow-y: hidden; 
     }
 }
