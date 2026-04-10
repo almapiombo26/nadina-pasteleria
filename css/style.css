@@ -929,7 +929,39 @@ footer {
     opacity: 0.5;
 }
 
-.card-img-wrap { position: relative; }
+.card-img-wrap { 
+  position: relative; 
+  overflow-x: auto; /* Permite el scroll horizontal */
+  scroll-snap-type: x mandatory; /* Hace que la imagen "calce" al deslizar */
+  scrollbar-width: none; /* Oculta la barra en Firefox */
+  -ms-overflow-style: none; /* Oculta la barra en IE/Edge */
+}
+
+/* Ocultar barra de scroll en Chrome/Safari */
+.card-img-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.carrusel-track {
+    display: flex;
+    width: 200%; /* Dos imágenes */
+    height: 100%;
+    transition: transform 0.4s ease; /* Para las flechas en PC */
+}
+
+.img-carrusel {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: start; /* Alinea la imagen al inicio del contenedor */
+    flex-shrink: 0;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(28%) sepia(12%) saturate(1257%) hue-rotate(131deg) brightness(95%) contrast(92%);
+    /* Esto hace que el ícono del calendario sea del mismo verde que tu marca */
+}
 
 .prev, .next {
     position: absolute;
@@ -1046,4 +1078,11 @@ footer {
     width: 56px; 
     height: 56px; 
   }
+}
+
+/* Las flechas solo las mostramos si hay mouse (PC) */
+@media (hover: none) {
+    .prev, .next {
+        display: none; /* En celu no hacen falta flechas si podés deslizar */
+    }
 }

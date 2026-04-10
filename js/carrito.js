@@ -5,12 +5,12 @@
 let metodoPago = 'transferencia';
 
 const imagenesTortas = {
-  'Torta de Chocolate': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=200&h=200&fit=crop',
-  'Torta de Frutilla':  'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=200&h=200&fit=crop',
-  'Cheesecake':         'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=200&h=200&fit=crop',
-  'Red Velvet':         'https://images.unsplash.com/photo-1562440499-64c9a111f713?w=200&h=200&fit=crop',
-  'Torta de Limón':     'https://images.unsplash.com/photo-1519869325930-281384150729?w=200&h=200&fit=crop',
-  'Carrot Cake':        'https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=200&h=200&fit=crop',
+  'Torta Matilda': 'img/torta-matilda.jpeg',
+  'Torta Chajá': 'img/chaja1.jpeg',
+  'Red Velvet': 'img/redvelvet-1.jpeg',
+  'Chocooreo': 'img/chocooreo1.jpeg',
+  'Torta de Cumpleaños': 'img/cumple1.jpeg',
+  "Brownie con dulce de leche y crema": "img/brownie1.jpeg"
 };
 
 const fallbackImg = 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=200&h=200&fit=crop';
@@ -103,17 +103,21 @@ function enviarWhatsApp() {
   if (carrito.length === 0) return alert('Tu carrito está vacío.');
   if (!fecha) return alert('Por favor seleccioná una fecha de retiro (mínimo 48hs de anticipación).');
 
+  // Esto convierte 2026-04-13 en 13/04/2026
+  const fechaFormateada = fecha.split('-').reverse().join('/');
+  mensaje += `\n Fecha de retiro: ${fechaFormateada}`;
+
   const subtotal = carrito.reduce((acc, p) => acc + p.precio * (p.cantidad || 1), 0);
   const total = metodoPago === 'transferencia' ? Math.round(subtotal * 1.10) : subtotal;
 
-  let mensaje = `¡Hola Nadina! Quiero confirmar un pedido 🎂\n\n`;
+  let mensaje = `¡Hola Nadina! Quiero confirmar un pedido de una torta entera\n\n`;
   mensaje += `*Detalle:*\n`;
   carrito.forEach(p => {
     mensaje += `• ${p.nombre} x${p.cantidad} — $${(p.precio * p.cantidad).toLocaleString('es-AR')}\n`;
   });
 
   mensaje += `\n *Retiro en Palermo* (Costa Rica 4824, Palermo, CABA)`;
-  mensaje += `\n Fecha: ${fecha}`;
+  mensaje += `\n*Fecha:* ${fechaFormateada}`;
   mensaje += `\n Horario: ${horario}`;
   mensaje += `\n Pago: ${metodoPago === 'transferencia' ? 'Transferencia (+10%)' : 'Efectivo'}`;
   mensaje += `\n\n *Total: $${total.toLocaleString('es-AR')}*`;
@@ -124,14 +128,24 @@ function enviarWhatsApp() {
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Setear fecha mínima (Hoy + 2 días)
   const inputFecha = document.getElementById('fecha');
   if (inputFecha) {
-    const minF = new Date();
-    minF.setDate(minF.getDate() + 2);
-    inputFecha.min = minF.toISOString().split('T')[0];
-  }
-
+    const hoy = new Date();
+    const minEntrega = new Date(hoy);
+    minEntrega.setDate(hoy.getDate() + 2);
+    const anio = minEntrega.getFullYear();
+    const mes = String(minEntrega.getMonth() + 1).padStart(2, '0');
+    const dia = String(minEntrega.getDate()).padStart(2, '0');
+    inputFecha.min = `${anio}-${mes}-${dia}`;
+    inputFecha.addEventListener('change', function() {
+      const fechaSeleccionada = new Date(this.value + 'T00:00:00'); 
+      const diaSemana = fechaSeleccionada.getUTCDay(); 
+      if (diaSemana === 1) {
+        alert("Los lunes la pastelería permanece cerrada. Por favor, seleccioná otro día de martes a domingo.");
+        this.value = ''; // Limpia el campo
+        }
+      });
+    }
   // 2. Renderizar carrito
   mostrarCarrito();
 

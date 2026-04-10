@@ -35,11 +35,21 @@ function actualizarBadge() {
 }
 
 function moverCarrusel(boton, direccion) {
-    const track = boton.parentElement.querySelector('.carrusel-track');
+    const wrap = boton.parentElement; // El .card-img-wrap
+    const anchoImagen = wrap.offsetWidth;
+    
     if (direccion === 1) {
-        track.style.transform = 'translateX(-50%)';
+        // Desliza hacia la derecha
+        wrap.scrollTo({
+            left: anchoImagen,
+            behavior: 'smooth'
+        });
     } else {
-        track.style.transform = 'translateX(0%)';
+        // Desliza hacia la izquierda
+        wrap.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+        });
     }
 }
 
