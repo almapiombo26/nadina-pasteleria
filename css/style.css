@@ -1044,7 +1044,7 @@ input[type="date"] {
   }
 
   .logo img {
-    height: 110px; /* Logo más pequeño en mobile */
+    height: 90px; /* Logo más pequeño en mobile */
   }
 
   .nav a {
@@ -1053,7 +1053,7 @@ input[type="date"] {
   }
   
   .card-img-wrap {
-    height: 250px; 
+    height: 350px; 
     display: block;
     position: relative;
     background-color: #f5f1eb;
