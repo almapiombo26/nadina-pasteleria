@@ -34,6 +34,20 @@ function actualizarBadge() {
   }
 }
 
+
+function consultarWhatsapp(boton, nombreTorta) {
+    // Esta línea busca la card entera, no importa donde esté el botón
+    const card = boton.closest('.card'); 
+    const medida = card.querySelector('.tamanio-select-custom').value;
+    const cantidad = card.querySelector('.cant-input').value;
+    const telefono = "5491136337422"; 
+    
+    const mensaje = `Hola Nadina! Me gustaría consultar por la torta personalizada: *${nombreTorta}*.%0A- *Medida:* ${medida}%0A- *Cantidad:* ${cantidad}%0AQuiero coordinar el diseño y los rellenos!`;
+    
+    const url = `https://wa.me/${telefono}?text=${mensaje}`;
+    window.open(url, '_blank');
+}
+
 function moverCarrusel(boton, direccion) {
     const wrap = boton.parentElement; // El .card-img-wrap
     const anchoImagen = wrap.offsetWidth;

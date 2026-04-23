@@ -957,6 +957,81 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     animation: fadeIn 0.3s ease;
 }
 
+/* Ajuste para que el track soporte muchas fotos */
+.card-personalizada .carrusel-track {
+    width: 1300%; /* 100% por cada foto (13 fotos = 1300%) */
+}
+
+.card-personalizada .img-carrusel {
+    width: calc(100% / 13); /* Cada foto ocupa 1 parte de las 13 */
+    min-width: calc(100% / 13);
+}
+
+
+/* Estilos para Tortas de Diseño */
+.card-personalizada {
+    border: 1px solid rgba(27, 83, 87, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-personalizada:hover {
+    transform: translateY(-5px);
+}
+
+/* Soporte para las 13 fotos */
+.card-personalizada .carrusel-track {
+    width: 1300% !important; 
+    display: flex !important;
+}
+.card-personalizada .img-carrusel {
+    width: calc(100% / 13) !important;
+    min-width: calc(100% / 13) !important;
+    object-fit: cover;
+}
+/* Estilo del botón */
+.btn-whatsapp {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128c7e;
+}
+
+.cantidad-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #555;
+}
+
+.cant-input {
+    width: 45px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.tamanio-select-custom {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fdfaf7;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
@@ -1037,6 +1112,15 @@ input[type="date"] {
     display: flex; /* Cambiamos de 'none' a 'flex' */
     gap: 15px; 
   }
+
+  .card-personalizada .carrusel-track {
+        width: 1300% !important; /* Forzamos a que mantenga el espacio para las 13 fotos */
+    }
+    
+    .card-personalizada .img-carrusel {
+        width: calc(100% / 13) !important;
+        min-width: calc(100% / 13) !important;
+    }
   
   header {
     padding: 0 15px;
