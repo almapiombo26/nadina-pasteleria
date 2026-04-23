@@ -131,41 +131,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const errorMsg = document.getElementById('error-fecha');
   if (inputFecha) {
     const hoy = new Date();
-    const minEntrega = new Date(hoy);
-    minEntrega.setDate(hoy.getDate() + 2); 
-    const anio = minEntrega.getFullYear();
-    const mes = String(minEntrega.getMonth() + 1).padStart(2, '0');
-    const dia = String(minEntrega.getDate()).padStart(2, '0');
+    const fechaMinima = new Date(hoy);
+    fechaMinima.setDate(hoy.getDate() + 2);
+    fechaMinima.setHours(0, 0, 0, 0);
+    const anio = fechaMinima.getFullYear();
+    const mes = String(fechaMinima.getMonth() + 1).padStart(2, '0');
+    const dia = String(fechaMinima.getDate()).padStart(2, '0');
     inputFecha.min = `${anio}-${mes}-${dia}`;
     inputFecha.addEventListener('change', function() {
       const fechaSeleccionada = new Date(this.value + 'T00:00:00');
       const diaSemana = fechaSeleccionada.getUTCDay();
-      if (diaSemana === 1) {
+      const esFechaInvalida = fechaSeleccionada < fechaMinima;
+      if (diaSemana === 1 || esFechaInvalida) {
         if (errorMsg) {
-          errorMsg.textContent = "⚠️ Los lunes el local está cerrado para retiros.";
+          errorMsg.textContent = diaSemana === 1 
+          ? "⚠️ Los lunes el local está cerrado." 
+          : "⚠️ Los pedidos requieren 48hs de anticipación.";
           errorMsg.style.display = 'block';
         }
         btnFinalizar.style.opacity = '0.5';
         btnFinalizar.style.pointerEvents = 'none';
         this.style.borderColor = '#b94040';
+        this.value = '';
       } else {
         if (errorMsg) errorMsg.style.display = 'none';
         btnFinalizar.style.opacity = '1';
         btnFinalizar.style.pointerEvents = 'auto';
-        this.style.borderColor = ''; // Vuelve al color original del CSS
-        }
-      });
-    }
-    mostrarCarrito();
-    
-    document.querySelectorAll('.pago-opcion').forEach(el => {
-    
-      el.addEventListener('click', function(e) {
-        const radio = this.querySelector('input');
-        if (radio) {
-          radio.checked = true;
-          seleccionarPago(this.dataset.pago);
-        }
-      });
+        this.style.borderColor = '';
+      }
+    });
+  }
+  
+  mostrarCarrito();
+  document.querySelectorAll('.pago-opcion').forEach(el => {
+    el.addEventListener('click', function(e) {
+      const radio = this.querySelector('input');
+      if (radio) {
+        radio.checked = true;
+        seleccionarPago(this.dataset.pago);
+      }
     });
   });
+});
