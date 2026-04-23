@@ -87,9 +87,8 @@ function prepararCompra(boton, nombreBase, imagen) {
   // AQUÍ ESTABA EL ERROR: se cambió "tam seleccionado" por "tamanioSeleccionado"
   const tamanioSeleccionado = selector.value; 
   const opcionSeleccionada = selector.options[selector.selectedIndex];
+  const porciones = opcionSeleccionada.getAttribute('data-porciones') || "6-8"; // Un default por si te olvidas alguno
   const precio = parseInt(opcionSeleccionada.getAttribute('data-precio'));
-  const porciones = opcionSeleccionada.getAttribute('data-porciones');
-  
   const nombreCompleto = `${nombreBase} (${tamanioSeleccionado}cm - ${porciones} porc.)`;
   
   agregarAlCarrito(nombreCompleto, precio, imagen);

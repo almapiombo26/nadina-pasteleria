@@ -50,11 +50,14 @@
       </h3>
 
       <div class="campo">
-        <label for="fecha">Fecha</label>
-        <div class="campo">
-          <label for="fecha">Fecha de retiro (Mínimo 48hs de anticipación). Lunes cerrado</label>
-          <input type="date" id="fecha">
-        </div>
+        <label for="fecha">Fecha de retiro</label>
+        <input type="date" id="fecha">
+        <p id="error-fecha" style="display:none; color: #b94040; font-size: 12px; margin-top: 8px; font-weight: 500;">
+          ⚠️ Los lunes la pastelería está cerrada. Por favor, seleccioná otro día.
+        </p>
+        <small style="display: block; margin-top: 6px; color: var(--texto-suave); font-size: 11px;">
+          * Entregas de martes a domingos (mínimo 48hs de anticipación).
+        </small>
       </div>
 
       <div class="campo">

@@ -48,6 +48,9 @@ header {
   top: 0;
   z-index: 200;
   box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  background: rgba(27, 83, 87, 0.92); /* Un toque de transparencia */
+  backdrop-filter: blur(8px); /* Desenfoque de fondo */
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .logo img {
@@ -903,6 +906,7 @@ footer {
 /* 3. LAS IMÁGENES */
 .img-carrusel {
   width: 50%; /* Ocupa la mitad del track (o sea, el 100% de la card) */
+  height: 100%; /* Forzamos a que llene el contenedor de 250px */
   flex-shrink: 0;
   scroll-snap-align: start;
   object-fit: cover;
@@ -932,6 +936,35 @@ footer {
 input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   filter: invert(28%) sepia(12%) saturate(1257%) hue-rotate(131deg) brightness(95%) contrast(92%);
+}
+
+/* Estilo para el input cuando hay error */
+#fecha:invalid {
+    box-shadow: none;
+}
+
+#error-fecha {
+    font-family: var(--font-body);
+    font-weight: 500;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mejora mobile para el input de fecha */
+input[type="date"] {
+    position: relative;
+    min-height: 45px;
+}
+.btn-finalizar[style*="pointer-events: none"] {
+    background: var(--beige-oscuro) !important;
+    color: var(--texto-suave) !important;
+    cursor: not-allowed;
+    box-shadow: none !important;
+    transform: none !important;
 }
 /* ============================================================
    RESPONSIVE

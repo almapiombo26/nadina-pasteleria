@@ -39,8 +39,61 @@
   <div class="productos">
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
+            <button class="prev" onclick="moverCarrusel(this, -1)">❮</button>
+            <div class="carrusel-track">
+                <img src="img/keylimepie.jpeg" alt="Key Lime Pie" class="img-carrusel">
+                <img src="img/keylimepie2.jpeg" alt="Key Lime Pie Interior" class="img-carrusel">
+            </div>
+            <button class="next" onclick="moverCarrusel(this, 1)">❯</button>
+        </div>
+        <div class="card-body">
+            <h3>Key Lime Pie</h3>
+            <p class="descripcion">Base de galletitas crocante, crema de lima natural y un equilibrio perfecto entre ácido y dulce. Coronada con crema suave.</p>
+            <div class="selector-tamanio">
+                <label>Elegir tamaño:</label>
+                <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
+                
+                    <option value="16" data-precio="7800" data-porciones="6-8">16cm (6-8 porciones)</option>
+                
+                    <option value="20" data-precio="11000" data-porciones="12-14">20cm (12-14 porciones)</option>
+                
+                    <option value="24" data-precio="14500" data-porciones="20-22">24cm (20-22 porciones)</option>
+                </select>
+            </div>
+            <span class="precio-display">$7.800</span>
+            <button onclick="prepararCompra(this, 'Key Lime Pie', 'img/keylimepie.jpeg')">Agregar al carrito</button>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-img-wrap carrusel-hover">
+            <button class="prev" onclick="moverCarrusel(this, -1)">❮</button>
+            <div class="carrusel-track">
+                <img src="img/carrot.jpeg" alt="Carrot Cake" class="img-carrusel">
+            </div>
+            <button class="next" onclick="moverCarrusel(this, 1)">❯</button>
+        </div>
+        <div class="card-body">
+            <h3>Carrot Cake</h3>
+
+            <p class="descripcion">Bizcochuelo especiado de zanahoria y nueces, súper húmedo, con nuestro frosting clásico de queso crema.</p>
+            <div class="selector-tamanio">
+                <label>Elegir tamaño:</label>
+                <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
+                    <option value="16" data-precio="8200" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="11500" data-porciones="12-14">20cm (12-14 porciones)</option>
+                </select>
+            </div>
+            <span class="precio-display">$8.200</span>
+            <button onclick="prepararCompra(this, 'Carrot Cake', 'img/carrot.jpeg')">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
             <div class="carrusel-track">
+                <img src="img/matilda2.jpeg" alt="Torta Matilda Interior" class="img-carrusel">
                 <img src="img/torta-matilda.jpeg" alt="Torta Matilda" class="img-carrusel">
             </div>
             <button class="next" onclick="moverCarrusel(this, 1)">&#10095;</button>

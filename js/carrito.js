@@ -10,7 +10,9 @@ const imagenesTortas = {
   'Red Velvet': 'img/redvelvet-1.jpeg',
   'Chocooreo': 'img/chocooreo1.jpeg',
   'Torta de Cumpleaños': 'img/cumple1.jpeg',
-  "Brownie con dulce de leche y crema": "img/brownie1.jpeg"
+  'Brownie con Frutos Rojos': 'img/brownie1.jpeg', // Asegurate que coincida con el HTML
+  'Key Lime Pie': 'img/keylimepie.jpeg',
+  'Carrot Cake': 'img/carrot.jpeg'
 };
 
 const fallbackImg = 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=200&h=200&fit=crop';
@@ -99,29 +101,25 @@ function enviarWhatsApp() {
   const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
   const fecha = document.getElementById('fecha')?.value;
   const horario = document.getElementById('horario')?.value;
-
   if (carrito.length === 0) return alert('Tu carrito está vacío.');
-  if (!fecha) return alert('Por favor seleccioná una fecha de retiro (mínimo 48hs de anticipación).');
+  if (!fecha) return alert('Por favor seleccioná una fecha de retiro.');
 
-  // Esto convierte 2026-04-13 en 13/04/2026
+  // Formateamos la fecha
   const fechaFormateada = fecha.split('-').reverse().join('/');
-  mensaje += `\n Fecha de retiro: ${fechaFormateada}`;
-
+  
   const subtotal = carrito.reduce((acc, p) => acc + p.precio * (p.cantidad || 1), 0);
   const total = metodoPago === 'transferencia' ? Math.round(subtotal * 1.10) : subtotal;
-
-  let mensaje = `¡Hola Nadina! Quiero confirmar un pedido de una torta entera\n\n`;
+  
+  let mensaje = `¡Hola Nadina! Quiero confirmar un pedido de torta entera\n\n`;
   mensaje += `*Detalle:*\n`;
   carrito.forEach(p => {
     mensaje += `• ${p.nombre} x${p.cantidad} — $${(p.precio * p.cantidad).toLocaleString('es-AR')}\n`;
   });
-
-  mensaje += `\n *Retiro en Palermo* (Costa Rica 4824, Palermo, CABA)`;
+  mensaje += `\n*Retiro en Palermo* (Costa Rica 4824)`;
   mensaje += `\n*Fecha:* ${fechaFormateada}`;
-  mensaje += `\n Horario: ${horario}`;
-  mensaje += `\n Pago: ${metodoPago === 'transferencia' ? 'Transferencia (+10%)' : 'Efectivo'}`;
-  mensaje += `\n\n *Total: $${total.toLocaleString('es-AR')}*`;
-
+  mensaje += `\n*Horario:* ${horario}`;
+  mensaje += `\n*Pago:* ${metodoPago === 'transferencia' ? 'Transferencia (+10%)' : 'Efectivo'}`;
+  mensaje += `\n\n*Total: $${total.toLocaleString('es-AR')}*`;
   const url = `https://wa.me/5491136337422?text=${encodeURIComponent(mensaje)}`;
   window.open(url, '_blank');
 }
@@ -129,31 +127,45 @@ function enviarWhatsApp() {
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
   const inputFecha = document.getElementById('fecha');
+  const btnFinalizar = document.querySelector('.btn-finalizar');
+  const errorMsg = document.getElementById('error-fecha');
   if (inputFecha) {
     const hoy = new Date();
     const minEntrega = new Date(hoy);
-    minEntrega.setDate(hoy.getDate() + 2);
+    minEntrega.setDate(hoy.getDate() + 2); 
     const anio = minEntrega.getFullYear();
     const mes = String(minEntrega.getMonth() + 1).padStart(2, '0');
     const dia = String(minEntrega.getDate()).padStart(2, '0');
     inputFecha.min = `${anio}-${mes}-${dia}`;
     inputFecha.addEventListener('change', function() {
-      const fechaSeleccionada = new Date(this.value + 'T00:00:00'); 
-      const diaSemana = fechaSeleccionada.getUTCDay(); 
+      const fechaSeleccionada = new Date(this.value + 'T00:00:00');
+      const diaSemana = fechaSeleccionada.getUTCDay();
       if (diaSemana === 1) {
-        alert("Los lunes la pastelería permanece cerrada. Por favor, seleccioná otro día de martes a domingo.");
-        this.value = ''; // Limpia el campo
+        if (errorMsg) {
+          errorMsg.textContent = "⚠️ Los lunes el local está cerrado para retiros.";
+          errorMsg.style.display = 'block';
+        }
+        btnFinalizar.style.opacity = '0.5';
+        btnFinalizar.style.pointerEvents = 'none';
+        this.style.borderColor = '#b94040';
+      } else {
+        if (errorMsg) errorMsg.style.display = 'none';
+        btnFinalizar.style.opacity = '1';
+        btnFinalizar.style.pointerEvents = 'auto';
+        this.style.borderColor = ''; // Vuelve al color original del CSS
         }
       });
     }
-  // 2. Renderizar carrito
-  mostrarCarrito();
-
-  // 3. Listeners de pago
-  document.querySelectorAll('.pago-opcion').forEach(el => {
-    el.addEventListener('click', () => {
-      seleccionarPago(el.dataset.pago);
-      el.querySelector('input').checked = true;
+    mostrarCarrito();
+    
+    document.querySelectorAll('.pago-opcion').forEach(el => {
+    
+      el.addEventListener('click', function(e) {
+        const radio = this.querySelector('input');
+        if (radio) {
+          radio.checked = true;
+          seleccionarPago(this.dataset.pago);
+        }
+      });
     });
   });
-});
