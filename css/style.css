@@ -837,22 +837,22 @@ footer {
 }
 
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
 }
 
 .footer-brand {
-    flex: 1;
+  flex: 1;
 }
 
 .footer-logo {
-    height: 40px;
-    filter: brightness(0) invert(1);
-    margin-bottom: 10px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+  margin-bottom: 10px;
 }
 
 .footer-info {
@@ -948,106 +948,96 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* Estilo para el input cuando hay error */
 #fecha:invalid {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 #error-fecha {
-    font-family: var(--font-body);
-    font-weight: 500;
-    animation: fadeIn 0.3s ease;
-}
-
-/* Ajuste para que el track soporte muchas fotos */
-.card-personalizada .carrusel-track {
-    width: 1300%; /* 100% por cada foto (13 fotos = 1300%) */
-}
-
-.card-personalizada .img-carrusel {
-    width: calc(100% / 13); /* Cada foto ocupa 1 parte de las 13 */
-    min-width: calc(100% / 13);
+  font-family: var(--font-body);
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
 }
 
 
 /* Estilos para Tortas de Diseño */
 .card-personalizada {
-    border: 1px solid rgba(27, 83, 87, 0.1);
-    transition: transform 0.3s ease;
+  border: 1px solid rgba(27, 83, 87, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .card-personalizada:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
-/* Soporte para las 13 fotos */
+/* Soporte para las 14 fotos */
 .card-personalizada .carrusel-track {
-    width: 1300% !important; 
-    display: flex !important;
+  width: 1400% !important; 
+  display: flex !important;
 }
 .card-personalizada .img-carrusel {
-    width: calc(100% / 13) !important;
-    min-width: calc(100% / 13) !important;
-    object-fit: cover;
+  width: calc(100% / 14) !important;
+  min-width: calc(100% / 14) !important;
+  object-fit: cover;
 }
 /* Estilo del botón */
 .btn-whatsapp {
-    background-color: #25d366;
-    color: white;
-    border: none;
-    padding: 14px;
-    border-radius: 8px;
-    font-weight: 600;
-    width: 100%;
-    margin-top: 15px;
-    cursor: pointer;
+  background-color: #25d366;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 15px;
+  cursor: pointer;
 }
 
 .btn-whatsapp:hover {
-    background-color: #128c7e;
+  background-color: #128c7e;
 }
 
 .cantidad-custom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-    font-size: 13px;
-    color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #555;
 }
 
 .cant-input {
-    width: 45px;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: center;
+  width: 45px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
 }
 
 .tamanio-select-custom {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #fdfaf7;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fdfaf7;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Mejora mobile para el input de fecha */
 input[type="date"] {
-    position: relative;
-    min-height: 45px;
+  position: relative;
+  min-height: 45px;
 }
 .btn-finalizar[style*="pointer-events: none"] {
-    background: var(--beige-oscuro) !important;
-    color: var(--texto-suave) !important;
-    cursor: not-allowed;
-    box-shadow: none !important;
-    transform: none !important;
+  background: var(--beige-oscuro) !important;
+  color: var(--texto-suave) !important;
+  cursor: not-allowed;
+  box-shadow: none !important;
+  transform: none !important;
 }
 /* ============================================================
    RESPONSIVE
@@ -1112,15 +1102,14 @@ input[type="date"] {
     display: flex; /* Cambiamos de 'none' a 'flex' */
     gap: 15px; 
   }
-
   .card-personalizada .carrusel-track {
-        width: 1300% !important; /* Forzamos a que mantenga el espacio para las 13 fotos */
-    }
-    
-    .card-personalizada .img-carrusel {
-        width: calc(100% / 13) !important;
-        min-width: calc(100% / 13) !important;
-    }
+    width: 1400% !important; /* Forzamos a que mantenga el espacio para las 14 fotos */
+  }
+
+  .card-personalizada .img-carrusel {
+    width: calc(100% / 14) !important;
+    min-width: calc(100% / 14) !important;
+  }
   
   header {
     padding: 0 15px;

@@ -6,9 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tortas — Nadina Pastelería</title>
   <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18106906656"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18106906656');
+  </script>
 </head>
-<body>
 
+<body>
 <!-- ===== HEADER ===== -->
 <header>
   <div class="header-container">
@@ -46,6 +53,8 @@
             <button class="prev" onclick="moverCarrusel(this, -1)">❮</button>
             <div class="carrusel-track">
                 <img src="img/carrot.jpeg" alt="Carrot Cake" class="img-carrusel">
+                <img src="img/carrot1.jpg" alt="Carrot Cake" class="img-carrusel">
+
             </div>
             <button class="next" onclick="moverCarrusel(this, 1)">❯</button>
         </div>
@@ -146,7 +155,7 @@
             <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
             <div class="carrusel-track">
                 <img src="img/redvelvet-1.jpeg" alt="Red Velvet" class="img-carrusel">
-                <img src="img/redvelvet-2.jpeg" alt="Red Velvet Interior" class="img-carrusel">
+                <img src="img/redvelvet-2.jpg" alt="Red Velvet Interior" class="img-carrusel">
             </div>
             <button class="next" onclick="moverCarrusel(this, 1)">&#10095;</button>
         </div>
@@ -215,6 +224,60 @@
             <button onclick="prepararCompra(this, 'Key Lime Pie', 'img/keylimepie.jpeg')">Agregar al carrito</button>
         </div>
     </div>
+    <div class="card">
+        <div class="card-img-wrap carrusel-hover">
+            <button class="prev" onclick="moverCarrusel(this, -1)">❮</button>
+            <div class="carrusel-track">
+                <img src="img/rogel.jpg" alt="Rogel" class="img-carrusel">
+                <img src="img/rogel2.jpg" alt="Rogel Interior" class="img-carrusel">
+            </div>
+            <button class="next" onclick="moverCarrusel(this, 1)">❯</button>
+        </div>
+        <div class="card-body">
+            <h3>Rogel</h3>
+            <p class="descripcion">"El favorito de los argentinos: finas capas de masa crocante intercaladas con generosas porciones de dulce de leche repostero, coronado con el tradicional merengue italiano."</p>
+            <div class="selector-tamanio">
+                <label>Elegir tamaño:</label>
+                <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
+                
+                    <option value="20" data-precio="11000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                
+                    <option value="24" data-precio="14500" data-porciones="10-12">24cm (10-12 porciones)</option>
+                </select>
+            </div>
+            <span class="precio-display">$7.800</span>
+            <button onclick="prepararCompra(this, 'Rogel', 'img/rogel.jpg')">Agregar al carrito</button>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-img-wrap carrusel-hover">
+            <button class="prev" onclick="moverCarrusel(this, -1)">❮</button>
+            <div class="carrusel-track">
+                <img src="img/Lemonpie.png" alt="Lemon Pie" class="img-carrusel">
+                <img src="img/Lemonpie2.png" alt="Lemon Pie Interior" class="img-carrusel">
+            </div>
+            <button class="next" onclick="moverCarrusel(this, 1)">❯</button>
+        </div>
+        <div class="card-body">
+            <h3>Lemon Pie</h3>
+            <p class="descripcion">na base de masa quebrada crocante, relleno de crema de limón natural con el equilibrio justo de acidez, y terminada con un merengue italiano sedoso y flambeado." </p>
+            <div class="selector-tamanio">
+                <label>Elegir tamaño:</label>
+                <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
+                
+                    <option value="18" data-precio="11000" data-porciones="8-10">18cm (6-8 porciones)</option>
+                
+                    <option value="24" data-precio="14500" data-porciones="10-12">24cm (10-12 porciones)</option>
+                </select>
+            </div>
+            <span class="precio-display">$7.800</span>
+            <button onclick="prepararCompra(this, 'Lemon Pie', 'img/Lemonpie.png')">Agregar al carrito</button>
+        </div>
+    </div>
+
+
 
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
@@ -240,6 +303,34 @@
             <button onclick="prepararCompra(this, 'Chocooreo', 'img/chocooreo1.jpeg')">Agregar al carrito</button>
         </div>
     </div>
+
+
+    <div class="card">
+        <div class="card-img-wrap carrusel-hover">
+            <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
+            <div class="carrusel-track">
+                <img src="img/tiramisu1.jpeg" alt="Torta Tiramisu" class="img-carrusel">
+                <img src="img/tiramisu2.jpg" alt="Torta Tiramisu Interior" class="img-carrusel">
+            </div>
+            <button class="next" onclick="moverCarrusel(this, 1)">&#10095;</button>
+        </div>
+        <div class="card-body">
+            <h3>Tiramisu</h3>
+            <p class="descripcion">"Un clásico italiano irresistible: capas de vainillas embebidas en café premium, con una crema suave de mascarpone y un toque final de cacao amargo."</p>
+            <div class="selector-tamanio">
+                <label>Elegir tamaño:</label>
+                <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
+                    <option value="18" data-precio="8400" data-porciones="6-8">18cm (6-8 porciones)</option>
+                    <option value="20" data-precio="11800" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="15800" data-porciones="10-12">24cm (10-12 porciones)</option>
+                </select>
+            </div>
+            <span class="precio-display">$8.400</span>
+            <button onclick="prepararCompra(this, 'Tiramisu', 'img/tiramisu1.jpg')">Agregar al carrito</button>
+        </div>
+    </div>
+
+
     <div class="productos">
         <div class="card card-personalizada">
             <div class="card-img-wrap">
