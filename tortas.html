@@ -48,33 +48,33 @@
 <section class="catalogo-seccion">
   <div class="productos">
     
+    <!-- CARROT CAKE — grupo $90.000/$75.000/$60.000 -->
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">❮</button>
             <div class="carrusel-track">
                 <img src="img/carrot.jpeg" alt="Carrot Cake" class="img-carrusel">
                 <img src="img/carrot1.jpg" alt="Carrot Cake" class="img-carrusel">
-
             </div>
             <button class="next" onclick="moverCarrusel(this, 1)">❯</button>
         </div>
         <div class="card-body">
             <h3>Carrot Cake</h3>
-
             <p class="descripcion">Bizcochuelo especiado de zanahoria y nueces, súper húmedo, con nuestro frosting clásico de queso crema.</p>
             <div class="selector-tamanio">
                 <label>Elegir tamaño:</label>
                 <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                    <option value="18" data-precio="8200" data-porciones="6-8">18cm (6-8 porciones)</option>
-                    <option value="20" data-precio="11500" data-porciones="8-10">20cm (8-10 porciones)</option>
-                    <option value="24" data-precio="15500" data-porciones="10-12">24cm (10-12 porciones)</option>
+                    <option value="16" data-precio="60000" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="75000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="90000" data-porciones="10-12">24cm (10-12 porciones)</option>
                 </select>
             </div>
-            <span class="precio-display">$8.200</span>
+            <span class="precio-display">$60.000</span>
             <button onclick="prepararCompra(this, 'Carrot Cake', 'img/carrot.jpeg')">Agregar al carrito</button>
         </div>
     </div>
 
+    <!-- TORTA MATILDA — grupo $90.000/$75.000/$60.000 -->
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
@@ -90,16 +90,17 @@
             <div class="selector-tamanio">
                 <label>Elegir tamaño:</label>
                 <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                    <option value="18" data-precio="8500" data-porciones="6-8">18cm (6-8 porciones)</option>
-                    <option value="20" data-precio="12000" data-porciones="8-10">20cm (8-10 porciones)</option>
-                    <option value="24" data-precio="16000" data-porciones="10-12">24cm (10-12 porciones)</option>
+                    <option value="16" data-precio="60000" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="75000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="90000" data-porciones="10-12">24cm (10-12 porciones)</option>
                 </select>
             </div>
-            <span class="precio-display">$8.500</span>
+            <span class="precio-display">$60.000</span>
             <button onclick="prepararCompra(this, 'Torta Matilda', 'img/torta-matilda.jpeg')">Agregar al carrito</button>
         </div>
     </div>
     
+    <!-- BROWNIE NADINA — grupo $84.000/$70.000/$56.000 -->
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
@@ -110,21 +111,22 @@
             <button class="next" onclick="moverCarrusel(this, 1)">&#10095;</button>
         </div>
         <div class="card-body">
-            <h3>Brownie con Frutos Rojos</h3>
+            <h3>Brownie Nadina</h3>
             <p class="descripcion">Base de brownie chocolatosa, mucho dulce de leche, crema chantilly y una lluvia de frutos rojos frescos.</p>
             <div class="selector-tamanio">
                 <label>Elegir tamaño:</label>
                 <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                    <option value="18" data-precio="8200" data-porciones="6-8">18cm (6-8 porciones)</option>
-                    <option value="20" data-precio="11500" data-porciones="8-10">20cm (8-10 porciones)</option>
-                    <option value="24" data-precio="15500" data-porciones="10-12">24cm (10-12 porciones)</option>
+                    <option value="16" data-precio="56000" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="70000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="84000" data-porciones="10-12">24cm (10-12 porciones)</option>
                 </select>
             </div>
-            <span class="precio-display">$8.200</span>
+            <span class="precio-display">$56.000</span>
             <button onclick="prepararCompra(this, 'Brownie con Frutos Rojos', 'img/brownie1.jpeg')">Agregar al carrito</button>
         </div>
     </div>
 
+    <!-- TORTA CHAJÁ — grupo $90.000/$75.000/$60.000 -->
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
@@ -140,16 +142,17 @@
             <div class="selector-tamanio">
                 <label>Elegir tamaño:</label>
                 <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                    <option value="18" data-precio="8700" data-porciones="6-8">18cm (6-8 porciones)</option>
-                    <option value="20" data-precio="12500" data-porciones="8-10">20cm (8-10 porciones)</option>
-                    <option value="24" data-precio="16500" data-porciones="10-12">24cm (10-12 porciones)</option>
+                    <option value="16" data-precio="60000" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="75000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="90000" data-porciones="10-12">24cm (10-12 porciones)</option>
                 </select>
             </div>
-            <span class="precio-display">$8.700</span>
+            <span class="precio-display">$60.000</span>
             <button onclick="prepararCompra(this, 'Torta Chajá', 'img/chaja1.jpeg')">Agregar al carrito</button>
         </div>
     </div>
 
+    <!-- RED VELVET — grupo $90.000/$75.000/$60.000 -->
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
@@ -165,15 +168,17 @@
             <div class="selector-tamanio">
                 <label>Elegir tamaño:</label>
                 <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                    <option value="18" data-precio="9000" data-porciones="6-8">18cm (6-8 porciones)</option>
-                    <option value="20" data-precio="13000" data-porciones="8-10">20cm (8-10 porciones)</option>
-                    <option value="24" data-precio="17000" data-porciones="10-12">24cm (10-12 porciones)</option>
+                    <option value="16" data-precio="60000" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="75000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="90000" data-porciones="10-12">24cm (10-12 porciones)</option>
                 </select>
             </div>
-            <span class="precio-display">$9.000</span>
+            <span class="precio-display">$60.000</span>
             <button onclick="prepararCompra(this, 'Red Velvet', 'img/redvelvet-1.jpeg')">Agregar al carrito</button>
         </div>
     </div>
+
+    <!-- TORTA DE CUMPLEAÑOS — grupo $90.000/$75.000/$60.000 -->
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
@@ -189,16 +194,17 @@
             <div class="selector-tamanio">
                 <label>Elegir tamaño:</label>
                 <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                    <option value="18" data-precio="13500" data-porciones="6-8">18cm (6-8 porciones)</option>
-                    <option value="20" data-precio="13500" data-porciones="8-10">20cm (8-10 porciones)</option>
-                    <option value="24" data-precio="17500" data-porciones="10-12">24cm (10-12 porciones)</option>
+                    <option value="16" data-precio="60000" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="75000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="90000" data-porciones="10-12">24cm (10-12 porciones)</option>
                 </select>
             </div>
-            <span class="precio-display">$13.500</span>
+            <span class="precio-display">$60.000</span>
             <button onclick="prepararCompra(this, 'Torta de Cumpleaños', 'img/cumple1.jpeg')">Agregar al carrito</button>
         </div>
     </div>
     
+    <!-- KEY LIME PIE — grupo $78.000/$65.000/$52.000 -->
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">❮</button>
@@ -214,16 +220,17 @@
             <div class="selector-tamanio">
                 <label>Elegir tamaño:</label>
                 <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                
-                    <option value="20" data-precio="11000" data-porciones="8-10">20cm (8-10 porciones)</option>
-                
-                    <option value="24" data-precio="14500" data-porciones="10-12">24cm (10-12 porciones)</option>
+                    <option value="16" data-precio="52000" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="65000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="78000" data-porciones="10-12">24cm (10-12 porciones)</option>
                 </select>
             </div>
-            <span class="precio-display">$7.800</span>
+            <span class="precio-display">$52.000</span>
             <button onclick="prepararCompra(this, 'Key Lime Pie', 'img/keylimepie.jpeg')">Agregar al carrito</button>
         </div>
     </div>
+
+    <!-- ROGGEL — grupo $78.000/$65.000/$52.000 -->
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">❮</button>
@@ -234,23 +241,22 @@
             <button class="next" onclick="moverCarrusel(this, 1)">❯</button>
         </div>
         <div class="card-body">
-            <h3>Rogel</h3>
+            <h3>Roggel</h3>
             <p class="descripcion">"El favorito de los argentinos: finas capas de masa crocante intercaladas con generosas porciones de dulce de leche repostero, coronado con el tradicional merengue italiano."</p>
             <div class="selector-tamanio">
                 <label>Elegir tamaño:</label>
                 <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                
-                    <option value="20" data-precio="11000" data-porciones="8-10">20cm (8-10 porciones)</option>
-                
-                    <option value="24" data-precio="14500" data-porciones="10-12">24cm (10-12 porciones)</option>
+                    <option value="16" data-precio="52000" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="65000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="78000" data-porciones="10-12">24cm (10-12 porciones)</option>
                 </select>
             </div>
-            <span class="precio-display">$7.800</span>
+            <span class="precio-display">$52.000</span>
             <button onclick="prepararCompra(this, 'Rogel', 'img/rogel.jpg')">Agregar al carrito</button>
         </div>
     </div>
 
-
+    <!-- LEMON PIE — grupo $72.000/$60.000/$48.000 -->
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">❮</button>
@@ -266,19 +272,17 @@
             <div class="selector-tamanio">
                 <label>Elegir tamaño:</label>
                 <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                
-                    <option value="18" data-precio="11000" data-porciones="8-10">18cm (6-8 porciones)</option>
-                
-                    <option value="24" data-precio="14500" data-porciones="10-12">24cm (10-12 porciones)</option>
+                    <option value="16" data-precio="48000" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="60000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="72000" data-porciones="10-12">24cm (10-12 porciones)</option>
                 </select>
             </div>
-            <span class="precio-display">$7.800</span>
+            <span class="precio-display">$48.000</span>
             <button onclick="prepararCompra(this, 'Lemon Pie', 'img/Lemonpie.png')">Agregar al carrito</button>
         </div>
     </div>
 
-
-
+    <!-- CHOCOOREO — grupo $90.000/$75.000/$60.000 -->
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
@@ -294,17 +298,17 @@
             <div class="selector-tamanio">
                 <label>Elegir tamaño:</label>
                 <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                    <option value="18" data-precio="8400" data-porciones="6-8">18cm (6-8 porciones)</option>
-                    <option value="20" data-precio="11800" data-porciones="8-10">20cm (8-10 porciones)</option>
-                    <option value="24" data-precio="15800" data-porciones="10-12">24cm (10-12 porciones)</option>
+                    <option value="16" data-precio="60000" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="75000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="90000" data-porciones="10-12">24cm (10-12 porciones)</option>
                 </select>
             </div>
-            <span class="precio-display">$8.400</span>
+            <span class="precio-display">$60.000</span>
             <button onclick="prepararCompra(this, 'Chocooreo', 'img/chocooreo1.jpeg')">Agregar al carrito</button>
         </div>
     </div>
 
-
+    <!-- TIRAMISU — grupo $72.000/$60.000/$48.000 -->
     <div class="card">
         <div class="card-img-wrap carrusel-hover">
             <button class="prev" onclick="moverCarrusel(this, -1)">&#10094;</button>
@@ -319,17 +323,17 @@
             <div class="selector-tamanio">
                 <label>Elegir tamaño:</label>
                 <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-                    <option value="18" data-precio="8400" data-porciones="6-8">18cm (6-8 porciones)</option>
-                    <option value="20" data-precio="11800" data-porciones="8-10">20cm (8-10 porciones)</option>
-                    <option value="24" data-precio="15800" data-porciones="10-12">24cm (10-12 porciones)</option>
+                    <option value="16" data-precio="48000" data-porciones="6-8">16cm (6-8 porciones)</option>
+                    <option value="20" data-precio="60000" data-porciones="8-10">20cm (8-10 porciones)</option>
+                    <option value="24" data-precio="72000" data-porciones="10-12">24cm (10-12 porciones)</option>
                 </select>
             </div>
-            <span class="precio-display">$8.400</span>
+            <span class="precio-display">$48.000</span>
             <button onclick="prepararCompra(this, 'Tiramisu', 'img/tiramisu1.jpg')">Agregar al carrito</button>
         </div>
     </div>
 
-
+    <!-- TORTA PERSONALIZADA — sin cambios de precio -->
     <div class="productos">
         <div class="card card-personalizada">
             <div class="card-img-wrap">
@@ -348,7 +352,6 @@
                     <img src="img/personalizadas12.jpg" alt="Torta" class="img-carrusel">
                     <img src="img/personalizadas13.jpg" alt="Torta" class="img-carrusel">
                     <img src="img/letterpersonalizada.jpg" alt="Torta" class="img-carrusel">
-
                 </div>
             </div>
             <div class="card-body">
@@ -357,7 +360,7 @@
                 <div class="selector-tamanio">
                     <label>Medida:</label>
                     <select class="tamanio-select-custom">
-                        <option value="18cm">18cm (6-8 porciones)</option>
+                        <option value="16cm">16cm (6-8 porciones)</option>
                         <option value="20cm">20cm (8-10 porciones)</option>
                     </select>
                 </div>
