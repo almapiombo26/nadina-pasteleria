@@ -63,9 +63,9 @@
         <p class="descripcion">Bizcochuelo de chocolate húmedo, intenso y cubierta de una ganache de chocolate.</p>
         <div class="selector-tamanio">
           <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-            <option value="16" data-precio="60000">16cm (6-8 porciones)</option>
-            <option value="20" data-precio="75000">20cm (8-10 porciones)</option>
-            <option value="24" data-precio="90000">24cm (10-12 porciones)</option>
+            <option value="16" data-precio="60000">16cm (8-10 porciones)</option>
+            <option value="20" data-precio="75000">20cm (12-15 porciones)</option>
+            <option value="24" data-precio="90000">24cm (20+ porciones)</option>
           </select>
         </div>
         <span class="precio-display">$60.000</span>
@@ -84,17 +84,17 @@
         <button class="next" onclick="moverCarrusel(this, 1)">&#10095;</button>
       </div>
       <div class="card-body">
-        <h3>Brownie & Frutos Rojos</h3>
+        <h3>Brownie Nadina</h3>
         <p class="descripcion">Base de brownie, dulce de leche, crema y frutos frescos.</p>
         <div class="selector-tamanio">
           <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-            <option value="16" data-precio="56000">16cm (6-8 porciones)</option>
-            <option value="20" data-precio="70000">20cm (8-10 porciones)</option>
-            <option value="24" data-precio="84000">24cm (10-12 porciones)</option>
+            <option value="16" data-precio="56000">16cm (8-10 porciones)</option>
+            <option value="20" data-precio="70000">20cm (12-15 porciones)</option>
+            <option value="24" data-precio="84000">24cm (20+ porciones)</option>
           </select>
         </div>
         <span class="precio-display">$56.000</span>
-        <button onclick="prepararCompra(this, 'Brownie con Frutos Rojos', 'img/brownie1.jpeg')">Agregar al carrito</button>
+        <button onclick="prepararCompra(this, 'Brownie Nadina', 'img/brownie1.jpeg')">Agregar al carrito</button>
       </div>
     </div>
     
@@ -114,9 +114,9 @@
         <div class="selector-tamanio">
           <label>Elegir tamaño:</label>
           <select class="tamanio-select" onchange="actualizarPrecioCard(this)">
-            <option value="16" data-precio="60000" data-porciones="6-8">16cm (6-8 porciones)</option>
-            <option value="20" data-precio="75000" data-porciones="8-10">20cm (8-10 porciones)</option>
-            <option value="24" data-precio="90000" data-porciones="10-12">24cm (10-12 porciones)</option>
+            <option value="16" data-precio="60000" data-porciones="8-10">16cm (8-10 porciones)</option>
+            <option value="20" data-precio="75000" data-porciones="12-15">20cm (12-15 porciones)</option>
+            <option value="24" data-precio="90000" data-porciones="20+">24cm (mas de 20 porciones)</option>
           </select>
         </div>
         <span class="precio-display">$60.000</span>
@@ -143,7 +143,6 @@
 <footer style="background: var(--verde); color: var(--beige-claro); padding: 60px 40px 20px;">
   <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;">
     <div class="footer-brand">
-      <img src="img/logo.png" alt="Nadina" style="height: 45px; margin-bottom: 10px;">
       <p style="font-size: 14px; opacity: 0.8;">Café & Arte artesanal</p>
     </div>
 
@@ -157,7 +156,7 @@
 
       <div class="footer-item">
         <strong style="display:block; color:var(--beige); margin-bottom: 5px;">📱 Escribinos</strong>
-        <p style="font-size: 14px; opacity: 0.8;">+54 9 11 3633-7422</p>
+        <p style="font-size: 14px; opacity: 0.8;">+54 9 11 6941-0000</p>
       </div>
       <div class="footer-item">
         <strong style="display:block; color:var(--beige); margin-bottom: 5px;">📸 Seguinos</strong>
@@ -169,6 +168,35 @@
     <p>&copy; 2024 Nadina Pastelería · Pedidos con 48hs de anticipación</p>
   </div>
 </footer>
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/5491169410000" target="_blank" class="btn-whatsapp-flotante" aria-label="Consultar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.49 2.027 7.8L0 32l8.418-2.01A15.938 15.938 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.773-1.854l-.486-.29-5.002 1.195 1.234-4.865-.317-.5A13.238 13.238 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.778c-.398-.199-2.354-1.162-2.719-1.294-.365-.133-.63-.199-.896.199-.265.398-1.028 1.294-1.26 1.56-.232.265-.464.298-.863.1-.398-.2-1.683-.62-3.205-1.98-1.184-1.057-1.984-2.362-2.216-2.76-.232-.398-.025-.613.175-.811.179-.178.398-.464.597-.696.2-.232.265-.398.398-.664.133-.265.066-.497-.033-.696-.1-.199-.896-2.16-1.228-2.958-.323-.776-.65-.671-.896-.683l-.763-.013c-.265 0-.696.1-1.061.497-.365.398-1.393 1.361-1.393 3.32 0 1.96 1.426 3.854 1.625 4.12.2.265 2.807 4.285 6.802 6.01.951.41 1.693.655 2.271.839.954.303 1.823.26 2.51.158.765-.114 2.354-.962 2.686-1.89.332-.928.332-1.724.232-1.89-.099-.166-.365-.265-.763-.464z"/>
+  </svg>
+</a>
+
+<style>
+.btn-whatsapp-flotante {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-whatsapp-flotante:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.30);
+}
+</style>
 
 <div id="toast"></div>
 <script src="js/main.js"></script>

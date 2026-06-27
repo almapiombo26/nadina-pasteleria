@@ -40,7 +40,7 @@ function consultarWhatsapp(boton, nombreTorta) {
     const card = boton.closest('.card'); 
     const medida = card.querySelector('.tamanio-select-custom').value;
     const cantidad = card.querySelector('.cant-input').value;
-    const telefono = "5491136337422"; 
+    const telefono = "5491169410000"; 
     
     const mensaje = `Hola Nadina! Me gustaría consultar por la torta personalizada: *${nombreTorta}*.%0A- *Medida:* ${medida}%0A- *Cantidad:* ${cantidad}%0AQuiero coordinar el diseño y los rellenos!`;
     

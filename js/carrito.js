@@ -120,7 +120,7 @@ function enviarWhatsApp() {
   mensaje += `\n*Horario:* ${horario}`;
   mensaje += `\n*Pago:* ${metodoPago === 'transferencia' ? 'Transferencia (+10%)' : 'Efectivo'}`;
   mensaje += `\n\n*Total: $${total.toLocaleString('es-AR')}*`;
-  const url = `https://wa.me/5491136337422?text=${encodeURIComponent(mensaje)}`;
+  const url = `https://wa.me/5491169410000?text=${encodeURIComponent(mensaje)}`;
   window.open(url, '_blank');
 }
 
