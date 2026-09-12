@@ -25,7 +25,7 @@ function mostrarCarrito() {
   if (carrito.length === 0) {
     contenedor.innerHTML = `
       <div class="carrito-vacio">
-        <p>Tu carrito está vacío 🌿</p>
+        <p>Tu carrito está vacío</p>
         <a href="tortas.html" class="btn">Ver tortas</a>
       </div>`;
     actualizarTotales(carrito);
