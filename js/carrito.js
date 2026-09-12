@@ -140,13 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
     inputFecha.min = `${anio}-${mes}-${dia}`;
     inputFecha.addEventListener('change', function() {
       const fechaSeleccionada = new Date(this.value + 'T00:00:00');
-      const diaSemana = fechaSeleccionada.getUTCDay();
       const esFechaInvalida = fechaSeleccionada < fechaMinima;
-      if (diaSemana === 1 || esFechaInvalida) {
+      if (esFechaInvalida) {
         if (errorMsg) {
-          errorMsg.textContent = diaSemana === 1 
-          ? "⚠️ Los lunes el local está cerrado." 
-          : "⚠️ Los pedidos requieren 48hs de anticipación.";
+          errorMsg.textContent = "⚠️ Los pedidos requieren 48hs de anticipación.";
           errorMsg.style.display = 'block';
         }
         btnFinalizar.style.opacity = '0.5';
