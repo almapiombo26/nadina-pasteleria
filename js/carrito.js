@@ -73,7 +73,7 @@ function eliminarProducto(index) {
 
 function actualizarTotales(carrito) {
   const subtotal = carrito.reduce((acc, p) => acc + p.precio * (p.cantidad || 1), 0);
-  const recargo = metodoPago === 'transferencia' ? subtotal * 0.10 : 0;
+  const recargo = 0;
   const total = subtotal + recargo;
 
   document.getElementById('subtotal').textContent = '$' + subtotal.toLocaleString('es-AR');
@@ -108,7 +108,7 @@ function enviarWhatsApp() {
   const fechaFormateada = fecha.split('-').reverse().join('/');
   
   const subtotal = carrito.reduce((acc, p) => acc + p.precio * (p.cantidad || 1), 0);
-  const total = metodoPago === 'transferencia' ? Math.round(subtotal * 1.10) : subtotal;
+  const total = subtotal;
   
   let mensaje = `¡Hola Nadina! Quiero confirmar un pedido de torta entera\n\n`;
   mensaje += `*Detalle:*\n`;
@@ -118,7 +118,7 @@ function enviarWhatsApp() {
   mensaje += `\n*Retiro en Palermo* (Costa Rica 4824)`;
   mensaje += `\n*Fecha:* ${fechaFormateada}`;
   mensaje += `\n*Horario:* ${horario}`;
-  mensaje += `\n*Pago:* ${metodoPago === 'transferencia' ? 'Transferencia (+10%)' : 'Efectivo'}`;
+  mensaje += `\n*Pago:* ${metodoPago === 'transferencia' ? 'Transferencia' : 'Efectivo'}`;
   mensaje += `\n\n*Total: $${total.toLocaleString('es-AR')}*`;
   const url = `https://wa.me/5491169410000?text=${encodeURIComponent(mensaje)}`;
   window.open(url, '_blank');
